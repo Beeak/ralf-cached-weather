@@ -34,4 +34,10 @@ class WeatherController extends Controller
             return $response->json();
         });
     }
+    
+    public function index()
+    {
+        $weatherData = $this->getWeather();
+        return view('weather.index', compact('weatherData'));
+    }
 }
